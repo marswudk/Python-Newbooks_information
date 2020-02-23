@@ -32,6 +32,7 @@ sheet = workbook.worksheets[0]
 
 #對網址跑迴圈
 for kind in range(1, kinds+1):
+    #%02d 將不足二位數的數字補0
     kind_url = '%s%02d%s' % (url,kind,mode)
     kind_html = requests.get(kind_url,headers= headers).text
     kind_soup = BeautifulSoup(kind_html,'html.parser')
